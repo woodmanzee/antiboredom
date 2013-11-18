@@ -22,12 +22,12 @@ Future Features
 <li>Post things you're doing for friends to see/News Feed</li>
 <li>Messaging Service</li>
 <li>Connect to Facebook to easily add friends/events</li>
-<ul>
+</ul>
 
 Languages/Hosting
 -----------------
-Backend: Ruby on Rails with postgres database
-Frontend: Javascript
-Hosting: Heroku.com
-Mobile: No
+Backend: Ruby on Rails with postgres database<br/>
+Frontend: Javascript<br/>
+Hosting: Heroku.com<br/>
+Mobile: No<br/>
 
