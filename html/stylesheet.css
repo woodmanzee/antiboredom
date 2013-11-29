@@ -1,0 +1,162 @@
+*{
+	background-color:white;
+}
+
+#header{
+    z-index:1;
+    border-radius:5px;
+    width:100%;
+    height:auto;
+    margin-top:-10px;
+    color:blue;
+}
+
+h2{
+	font-family:Verdana;
+	text-align:left;
+	font-size:20px;
+	margin-left:25px;
+	margin-top:0px;
+	margin-bottom:5px;
+}
+
+.signup{
+	text-align:center;
+	position:relative;
+	width:75px;
+	height:25px;
+	border:1px solid #97BDA0;
+	float:right;
+	font-family:Verdana;
+	color:black;
+	margin-bottom:5px;
+	margin-left:auto;
+	margin-right:15px;
+	border-radius:4px;
+	font-size:15px;
+	padding-top:5px;
+	background-color:#BBEDC7;
+}
+
+img{
+	height:30px;
+	width:30px;
+	margin-left:2px;
+	margin-bottom:-2px;
+	border:.5px solid black;
+	margin-top:-15px;
+}
+
+h1{
+	font-family:Verdana;
+	color:black;
+	font-size:30px;
+	margin-bottom:-30px;
+}
+
+#welcome{
+	font-family:Verdana;
+	text-align:right;
+	float:right;
+	position:relative;
+	font-size:15px;
+	margin-right:0px;
+	padding:3px;
+	margin-bottom:-8px;
+	color:black;
+}
+
+#logButton{
+	background-color:#91D1ED;
+	width:30%;
+	height:25px;
+	text-align:center;
+	border-radius:7px;
+	margin:auto;
+	border:2px solid #83BDD6;
+}
+
+#login{
+	margin-top:100px;
+	width:50%;
+	height:155px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#F3F5F0;
+	border-radius:5px;
+	clear:both;
+	border:3px solid #C2C4BE;
+
+}
+
+.formp{
+	font-family:Verdana;
+	background-color:#F3F5F0;
+	margin-left:10px;
+	font-size:15px;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+
+.form{
+	font-family:Verdana;
+	background-color:#F3F5F0;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:8px;
+
+}
+
+a{
+	text-decoration:none;
+	font-family:Verdana;
+	text-size:15px;
+	text-align:center;
+	color:black;
+}
+
+#createAccount{
+	clear:both;
+	padding-top:10px;
+	width:30%;
+	height:35px;
+	border:2px solid #83BDD6;
+	margin:auto;
+	border-radius:5px;
+	font-family:Verdana;
+	background-color:#91D1ED;
+	text-align:center;
+	font-weight:bold;
+}
+
+#boredInfo{
+	float:right;
+	margin-right:0px;
+	margin-left:5px;
+	border:2px solid black;
+	width:40%;
+	border-radius:5px;
+	font-family:Verdana;
+	font-size:14px;
+	padding:5px;
+	
+}
+
+ul{
+	font-size:13px;
+	margin-left:-5px;
+}
+
+#signup{
+	width:50%;
+	margin-left:0px;
+	margin-right:auto;
+	background-color:#F3F5F0;
+	border-radius:5px;
+	float:left;
+	border:3px solid #C2C4BE;
+	height:auto;
+	margin-bottom:10px;
+}
+
+
