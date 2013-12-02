@@ -1,0 +1,34 @@
+TODO: Front End
+
+pop ups for "im bored" and "add friend"
+Notifications: 
+	added, and accepted friend requests, invitations
+	added: hover to accept or decline
+	
+News Feed:
+	sort option: expires, starts, most recent, my events
+	hover over event gives detailed info
+
+im bored:
+	post something you want to do
+	include: range of times, activity (name & desc), location, private? 
+	allow users to edit own posts
+	allow invites
+	
+add friend:
+	add by email
+	if user doesnt exist, send invitation to join
+	
+gear next to welcome:
+	allow to change options
+	options: email settings for notifications
+
+log in screen:
+	password retrieval
+	
+sign up screen:
+	success pop up
+	form validation (check for existing, valid entries, etc)
+	
+
+	

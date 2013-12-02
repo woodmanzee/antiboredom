@@ -4,6 +4,9 @@
 	<head>
 		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 		<title>Welcome to Bored Friends!</title>
+		
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="../scripts/newsfeed.js"></script>
 	</head>
 	<body>
 
@@ -17,8 +20,8 @@
 			<hr width=95%>
 		</div>
 		<div id="feedButtons">
-			<a href=""><div id="boredButton">I'M BORED!</div></a>
-			<a href=""><div id="addFriendButton">Add friend</div></a>
+			<a><div onclick="boredClick()" id="boredButton">I'M BORED!</div></a>
+			<a><div id="addFriendButton">Add friend</div></a>
 			<div id="notifications">Notifications</div>
 		</div>
 		<div id="boredFeedBox">
