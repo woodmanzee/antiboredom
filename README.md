@@ -31,3 +31,6 @@ Frontend: Javascript<br/>
 Hosting: Heroku.com<br/>
 Mobile: No<br/>
 
+Database Model
+--------------
+![Database Model](dbmodel.png?raw=true)
