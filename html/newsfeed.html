@@ -2,11 +2,14 @@
 <html>
 
 	<head>
-		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/jquery-ui-smoothness-1.10.3.css"/>
 		<title>Welcome to Bored Friends!</title>
 		
-		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="../scripts/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../scripts/jquery-ui-1.10.3.custom.min.js"></script>
 		<script type="text/javascript" src="../scripts/newsfeed.js"></script>
+		
 	</head>
 	<body>
 
@@ -20,7 +23,7 @@
 			<hr width=95%>
 		</div>
 		<div id="feedButtons">
-			<a><div onclick="boredClick()" id="boredButton">I'M BORED!</div></a>
+			<a><div id="boredButton">I'M BORED!</div></a>
 			<a><div id="addFriendButton">Add friend</div></a>
 			<div id="notifications">Notifications</div>
 		</div>
@@ -34,6 +37,10 @@
 				<a href=""><img src="icons/piggy.jpg"/></a>
 				<b>Piggy</b> wants to talk about herself
 			</p>
+		</div>
+		
+		<div id="dialog-confirm" title="What do you want to do?">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
 		</div>
 	</body>
 </html>

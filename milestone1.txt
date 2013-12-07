@@ -1,0 +1,18 @@
+﻿Milestone 12/2/13
+
+boredom app.
+
+Zackary Woodmansee
+Mychal Calderon
+Melissa Smith
+Melissa Edge
+Stewart Clyde
+
+Notable Updates:
+
+Created Database Model
+Created Front End TODO's and implementation plans (how they work, what they need from the backend, etc)
+Created scripts directory and basic script file
+Began creating initial API foundation and some basic AJAX requests needed for the frontend
+
+	We had been having some trouble all meeting together for a while. We were able to finally all meet and get quite a bit of initial groundwork laid for the front end and a few basics for the back. We had our interface all planned already from the previous milestone but we wanted to fine tune a few more details on some of the specific features, how the user would interact with the app, and begin to start dividing up work. We came up with a pretty comprehensive list of TODO's for the frontend and divided it up into different sections. We also modeled out the database and tried to figure out relationships between how the front end and the back end would communicate.
