@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  userid: MyString
+  activityid: MyString
+  title: MyString
+  private: false
+  location: MyString
+  start: 2013-12-06 18:34:59
+  end: 2013-12-06 18:34:59
+
+two:
+  userid: MyString
+  activityid: MyString
+  title: MyString
+  private: false
+  location: MyString
+  start: 2013-12-06 18:34:59
+  end: 2013-12-06 18:34:59

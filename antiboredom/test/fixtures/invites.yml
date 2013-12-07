@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  userid: MyString
+  activityid: MyString
+  attending: false
+
+two:
+  userid: MyString
+  activityid: MyString
+  attending: false
