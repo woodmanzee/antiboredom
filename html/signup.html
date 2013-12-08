@@ -3,15 +3,19 @@
 
 	<head>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/jquery-ui-smoothness-1.10.3.css"/>
 		<title>Welcome to Bored Friends!</title>
+		<script type="text/javascript" src="../scripts/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../scripts/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="../scripts/signup.js"></script>
 	</head>
 	<body>
 
 		<div id="header">
 			<h1>Bored Friends</h1>
-			<a href="signup.html"><div class="signup">Sign-up
+			<hr>
+			<a href="signup.html"><div id ="signButton" class="ui-button">
 			</div></a>
-			<hr width=95%>
 		</div>
 		<div id="signup">
 			<p class="formp">First and Last Name:</p>
@@ -24,14 +28,16 @@
 			</form>
 			<p class="formp">Password:</p>
 			<form name=pass class="form" value="">
-				<input type="text" name=pass size=43%>
+				<input type="password" name=pass size=43%>
 			</form>
 			<p class="formp">Confirm password:</p>
 			<form name=pass2 class="form" value="">
-				<input type="text" name=pass2 size=43%>
+				<input type="password" name=pass2 size=43%>
 			</form>
 		</div>
-		
+		<a href="newsfeed.html"><div id="createAccount" class ="ui-button">
+		</div></a>
+		<!--
 		<div id="boredInfo">
 			<b>Bored Friends</b> helps you connect with other friends that are bored.
 			<ul>
@@ -39,8 +45,7 @@
 				<li>Receive alerts from your friends when they want to hang out</li>
 				<li>Post what you're up to, and see what others are doing</li>
 			</ul>
-		</div>
-		<a href="newsfeed.html"><div id="createAccount">Create Account
-		</div></a>
+		</div>-->
+
 	</body>
 </html>

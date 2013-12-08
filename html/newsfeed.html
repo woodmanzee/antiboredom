@@ -15,20 +15,15 @@
 
 		<div id="header">
 			<h1>Bored Friends</h1>
-			<a href="index.html"><div class="signup">Log out
-			</div></a>
 			<p id="welcome">Welcome, <b>Beaker</b>!
 				<a href=""><img src="icons/beaker.jpg"/></a>
 			</p>
-			<hr width=95%>
+			<hr>
+			<a href="index.html"><div id ="signButton" class="ui-button">
+			</div></a>
 		</div>
-		<div id="feedButtons">
-			<a><div id="boredButton">I'M BORED!</div></a>
-			<a><div id="addFriendButton">Add friend</div></a>
-			<div id="notifications">Notifications</div>
-		</div>
+		<h2 id="whos_bored">Who's Bored?</h2>
 		<div id="boredFeedBox">
-			<h2>Who's Bored?</h2>
 			<p class="newsItem">
 				<a href=""><img src="icons/kermit.jpg"/></a>
 				<b>Kermit</b> wants to play the banjo
@@ -38,9 +33,26 @@
 				<b>Piggy</b> wants to talk about herself
 			</p>
 		</div>
-		
-		<div id="dialog-confirm" title="What do you want to do?">
-			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+		<div id="feedButtonBox">
+			<a><div id="boredButton" class="ui-button"></div></a>
+			<a><div id="addFriendButton" class="ui-button"></div></a>
+			<div id="notificationsButton" class="ui-button"></div>
+		</div>
+		<div id="dialog-activity">
+			What do you want to do?
+			<form name=activity class="activity-form" value=" ">
+				<input type="text" name=activity size=25%>
+			</form>
+		</div>
+		<div id="dialog-friend">
+			Enter you friend's email address:
+			<form name=friend class="friend-form" value=" ">
+				<input type="text" name=friend size=25%>
+			</form>
+		</div>
+		<div id="dialog-notifications">
+			<p class="notification-item"><b>Person A</b> added you as a friend</p>
+			<p class="notification-item"><b>Person B</b> accepted your friend request</p>
 		</div>
 	</body>
 </html>
