@@ -3,15 +3,19 @@
 
 	<head>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/jquery-ui-smoothness-1.10.3.css"/>
 		<title>Welcome to Bored Friends!</title>
+		<script type="text/javascript" src="../scripts/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../scripts/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="../scripts/index.js"></script>
 	</head>
 	<body>
 
 		<div id="header">
 			<h1>Bored Friends</h1>
-			<a href="signup.html"><div class="signup">Sign-up
+			<hr>
+			<a href="signup.html"><div id ="signButton" class="ui-button">
 			</div></a>
-			<hr width=95%>
 		</div>
 		<div id="login">
 			<p class="formp">Email address:</p>
@@ -20,9 +24,9 @@
 			</form>
 			<p class="formp">Password:</p>
 			<form name=password class="form" value="">
-				<input type="text" name=password size=43%>
+				<input type="password" name=password size=43%>
 			</form>
-			<a href="newsfeed.html"><div id="logButton">Login
+			<a href="newsfeed.html"><div id="logButton" class ="ui-button">Login
 			</div></a>
 		</div>
 
