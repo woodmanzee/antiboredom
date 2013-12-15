@@ -23,6 +23,11 @@
 			</div></a>
 		</div>
 		<h2 id="whos_bored">Who's Bored?</h2>
+		<div id="feedButtonBox">
+			<a><div id="boredButton" class="ui-button"></div></a>
+			<a><div id="addFriendButton" class="ui-button"></div></a>
+			<div id="notificationsButton" class="ui-button"></div>
+		</div>
 		<div id="boredFeedBox">
 			<p class="newsItem">
 				<a href=""><img src="icons/kermit.jpg"/></a>
@@ -32,16 +37,28 @@
 				<a href=""><img src="icons/piggy.jpg"/></a>
 				<b>Piggy</b> wants to talk about herself
 			</p>
-		</div>
-		<div id="feedButtonBox">
-			<a><div id="boredButton" class="ui-button"></div></a>
-			<a><div id="addFriendButton" class="ui-button"></div></a>
-			<div id="notificationsButton" class="ui-button"></div>
+			<!-- news_item_placeholder is used as a template to copy
+				new items into -->
+			<div id="news_item_placeholder" class="newsItem" style="display: none;">
+				<img class="news_user_icon" src="icons/piggy.jpg"/>
+				<span class="news_user_name"><b>User</b></span> wants to 
+				<span class="news_activity_name">insert activity here</span>
+			</div>
 		</div>
 		<div id="dialog-activity">
-			What do you want to do?
 			<form name=activity class="activity-form" value=" ">
-				<input type="text" name=activity size=25%>
+				<div id="what_field" class="activity_dialog_field">
+					<span class="field_label">What:</span><input type="text" name=activity size=25%>
+				</div>
+				<div id="where_field" class="activity_dialog_field">
+					<span class="field_label">Where:</span><input type="text" name=activity size=25%>
+				</div>
+				<div id="when_field" class="activity_dialog_field">
+					<span class="field_label">When:</span><input type="text" name=activity size=25%>
+				</div>
+				<div id="details_field" class="activity_dialog_field">
+					<span class="field_label">Details:</span><textarea rows="10" cols="30" name=activity></textarea>
+				</div>
 			</form>
 		</div>
 		<div id="dialog-friend">
