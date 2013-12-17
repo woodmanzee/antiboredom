@@ -1,20 +1,5 @@
 $(document).ready(function(){
 
-	$('#timepicker_start').timepicker({
-       showLeadingZero: false,
-       onSelect: tpStartSelect,
-       maxTime: {
-           hour: 16, minute: 30
-       }
-   });
-   $('#timepicker_end').timepicker({
-       showLeadingZero: false,
-       onSelect: tpEndSelect,
-       minTime: {
-           hour: 9, minute: 15
-       }
-   });
-   
 	get_friends();	
 	get_notifications();
 	$("#signButton").button({
