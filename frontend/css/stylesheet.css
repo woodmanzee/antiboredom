@@ -235,12 +235,28 @@ h2{
 	color:blue;
 }
 
-.notification-item{
+.accept_item{
+	margin-top:20px;
+	margin:auto;
+	font-size:15px;
+}
+
+.confirm_item{
+	margin-top:20px;
+	maring:auto;
 	font-size:15px;
 }
 
 #dialog-friend{
 	font-size:15px;
+}
+
+.friend_item{
+	margin-top:15px;
+}
+
+.friend_name{
+	font-weight:bold;
 }
 
 .ui-state-default .ui-icon {

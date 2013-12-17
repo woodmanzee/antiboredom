@@ -62,14 +62,29 @@
 			</form>
 		</div>
 		<div id="dialog-friend">
-			Enter you friend's email address:
-			<form name=friend class="friend-form" value=" ">
+			Enter your friend's email address:
+			<form name=friend id="email-field" value=" ">
 				<input type="text" name=friend size=25%>
 			</form>
+			<p>Your friends:</p>
+			<div id ="friends_list">
+				<div id ="friends_placeholder" class="friend_item" style="display: none;">
+					<img class="friend_icon" src="icons/piggy.jpg"/>
+					<span class="friend_name"><b>Friend Name</b></span>
+				</div>
+			</div>
 		</div>
 		<div id="dialog-notifications">
-			<p class="notification-item"><b>Person A</b> added you as a friend</p>
-			<p class="notification-item"><b>Person B</b> accepted your friend request</p>
+			<div id ="notifications_list">
+				<div id ="accept_placeholder" class = "accept_item" style="display: none;">
+					<img class="friend_icon" src="icons/piggy.jpg"/>
+					<span class="friend_name"><b>Friend Name</b></span> accepted your friend request.
+				</div>
+				<div id ="confirm_placeholder" class ="confirm_item" style="display:none;">
+					<img class="friend_icon" src="icons/piggy.jpg"/>
+					<span class="friend_name"><b>Friend Name</b></span> added you as a friend.
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
