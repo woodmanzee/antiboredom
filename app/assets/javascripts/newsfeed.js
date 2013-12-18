@@ -4,9 +4,14 @@ $(document).ready(function(){
 	get_notifications();
 	get_activities();
 	
-	$("#signButton").button({
+	$("#logoutButton").button({
 		label: "Log out"
 	});
+	
+	$("#logoutButton").function(){
+		
+	});
+	
 	$("#addFriendButton").button({
 		label: "Add friend"
 	});
@@ -70,16 +75,7 @@ $(document).ready(function(){
 	  console.log(end_time)
 	  console.log(details)
 	  
-	  // create a newsfeed item with the values
-	  var newsItem = $('#news_item_placeholder').clone();
-	  // TODO: populate the new values with the json returned from
-	  // the server after a successful add
-	  newsItem.attr('id', 'newID');
-	  newsItem.find('img.news_user_icon').attr('id', 'newID');
-	  newsItem.find('span.news_user_name').text('Someone');
-	  newsItem.find('span.news_activity_name').text(what);
-	  $('#boredFeedBox').prepend(newsItem);
-	  newsItem.show();
+	  display_activity(what);
 	  
 	  $.ajax({
 			type: "POST",

@@ -46,6 +46,15 @@ hr{
 	font-size:15px;
 }
 
+#logoutButton{
+	float:right;
+	width: 100px;
+	background-color: #BBEDC7;
+	margin-top:-30px;
+	margin-bottom:20px;
+	font-size:15px;
+}
+
 #logButton{
 	margin: 0 auto;
 	width: 75px;

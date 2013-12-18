@@ -4,7 +4,8 @@
         <a href=""><%= image_tag("icons/Beaker.jpg", :alt => "piggy", :class => "friend_icon") %></a>
 			</p>
 			<hr>
-			<a href="signup.html"><div id ="signButton" class="ui-button">
+			<a href="signup.html"><div id ="logoutButton" class="ui-button">
+				<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 			</div></a>
 		</div>
 		<h2 id="whos_bored">Who's Bored?</h2>
