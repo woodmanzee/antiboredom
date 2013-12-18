@@ -31,13 +31,15 @@ $(document).ready(function(){
 	  // get the values from the form
 	  var what = $('#dialog-activity #what_field input').val();
 	  var where = $('#dialog-activity #where_field input').val();
-	  var when = $('#dialog-activity #when_field input').val();
+	  var start_time = $('#dialog-activity #start_field input').val();
+	  var end_time = $('#dialog-activity #end_field input').val();
 	  var details = $('#dialog-activity #details_field textarea').val();
 	  
 	  // debugging, look at the values
 	  console.log(what);
 	  console.log(where);
-	  console.log(when)
+	  console.log(start_time)
+	  console.log(end_time)
 	  console.log(details)
 	  
 	  // create a newsfeed item with the values
@@ -51,11 +53,56 @@ $(document).ready(function(){
 	  $('#boredFeedBox').prepend(newsItem);
 	  newsItem.show();
 	  
+	  $.ajax({
+			type: "POST",
+			url: "http://antiboredom.herokuapp.com/activities/new",
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			processData: false, // we don't want jquery to urlencode the json we send
+			data: { userid: "1", title: what, location: where, start: start_time, end: end_time },
+			success: function(data, status, obj) {
+				alert( "Returned with: " + data + " and " + status + " and " + obj);
+			},
+			error: function() {
+				alert("Something went wrong");
+			}
+	  })
+	  
 	}
 	
 	function add_friend(){
 		var email = $('#dialog-friend #email-field input').val();
- 		//TODO send email/notification to another person		
+ 		//TODO send email/notification to another person
+			$.getJSON( "http://antiboredom.herokuapp.com/activities.json", function( data ) {
+			  var items = [];
+			  $.each( data, function( key, val ) {
+				items.push( "<li id='" + key + "'>" + val + "</li>" );
+			  });
+			 
+			  $( "<ul/>", {
+				"class": "my-new-list",
+				html: items.join( "" )
+			  }).appendTo( "body" );
+			});
+			
+			/*$.ajax({
+			  dataType: "jsonp",
+			  url: "http://antiboredom.herokuapp.com/activities.json",
+			  success: function( data ) {
+			  var items = [];
+			  $.each( data, function( key, val ) {
+				items.push( "<li id='" + key + "'>" + val + "</li>" );
+			  });
+			 
+			  $( "<ul/>", {
+				"class": "my-new-list",
+				html: items.join( "" )
+			  }).appendTo( "body" );
+			},
+			error: function() {
+				alert("Something went wrong");
+			} 
+			});*/
 	}
 	
 	function get_friends(){	
