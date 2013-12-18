@@ -2,6 +2,8 @@ $(document).ready(function(){
 
 	get_friends();	
 	get_notifications();
+	get_activities();
+	
 	$("#signButton").button({
 		label: "Log out"
 	});
@@ -26,6 +28,32 @@ $(document).ready(function(){
     $( "#notificationsButton" ).click(function() {
       $( "#dialog-notifications" ).dialog( "open" );
     });
+		
+	function get_activities() {
+		$.ajax({
+			type:"GET",
+			url:"http://localhost:3000/activities.json",
+			success: function(data) {
+				$.each( data, function(i) {
+					console.log(data[i].location);
+					display_activity(data[i].title);
+				});
+			}
+		});
+	}
+	
+	function display_activity(what){
+	  // create a newsfeed item with the values
+	  var newsItem = $('#news_item_placeholder').clone();
+	  // TODO: populate the new values with the json returned from
+	  // the server after a successful add
+	  newsItem.attr('id', 'newID');
+	  newsItem.find('img.news_user_icon').attr('id', 'newID');
+	  newsItem.find('span.news_user_name').text('Someone');
+	  newsItem.find('span.news_activity_name').text(what);
+	  $('#boredFeedBox').prepend(newsItem);
+	  newsItem.show();
+	}
 	
 	function create_activity() {
 	  // get the values from the form
