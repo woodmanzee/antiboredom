@@ -8,7 +8,7 @@ $(document).ready(function(){
 		label: "Log out"
 	});
 	
-	$("#logoutButton").function(){
+	$("#logoutButton").click(function(){
 		
 	});
 	
