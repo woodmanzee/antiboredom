@@ -1,1 +1,3 @@
-json.extract! @friend, :id, :userid, :friendid, :block, :created_at, :updated_at
+json.array!(@friends) do |friend|
+  json.extract! friend, :id, :userid, :friendid
+end
