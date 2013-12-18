@@ -9,7 +9,13 @@ $(document).ready(function(){
 	});
 	
 	$("#logoutButton").click(function(){
-		
+		$.ajax({
+			type:"DELETE",
+			url:"http://localhost:3000/users/sign_out",
+			success: function(data) {
+				console.log("Logged out");
+			}
+		});
 	});
 	
 	$("#addFriendButton").button({
