@@ -59,10 +59,10 @@ $(document).ready(function(){
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
 			processData: false, // we don't want jquery to urlencode the json we send
-			data: JSON.stringify({ userid: "1", title: what, location: where, start: start_time, end: end_time },
+			data: JSON.stringify({ userid: "1", title: what, location: where, start: start_time, end: end_time }),
 			success: function(data, status, obj) {
 				alert( "Returned with: " + data + " and " + status + " and " + obj);
-			}),
+			},
 			error: function() {
 				alert("Something went wrong");
 			}
