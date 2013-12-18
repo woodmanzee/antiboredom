@@ -9,5 +9,9 @@ Antiboredom::Application.routes.draw do
   get "pages/newsfeed"
   get "pages/signup"
 
-  root :to => "pages#home"
+  root :to => "sign_in#new"
+
+  devise_scope :user do
+    get "sign_in", :to => "devise/sessions#new"
+  end
 end

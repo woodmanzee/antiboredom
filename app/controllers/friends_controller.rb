@@ -36,8 +36,6 @@ class FriendsController < ApplicationController
 
     @existing = Friend.select("userid, friendid").where("userid = ? AND friendid = ?", @lower, @higher)
     if @existing.nil? || @existing.empty?
-      format.json { render json: @lower, status: :unprocessable_entity }
-    else
       @friend = Friend.new(:userid => @lower, :friendid => @higher)
 
       respond_to do |format|
@@ -48,6 +46,10 @@ class FriendsController < ApplicationController
           format.html { render action: 'new' }
           format.json { render json: @friend.errors, status: :unprocessable_entity }
         end
+      end
+    else
+      respond_to do |format|
+        format.json { render json: @lower, status: :unprocessable_entity }
       end
     end
   end
