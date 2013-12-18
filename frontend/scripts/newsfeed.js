@@ -73,7 +73,7 @@ $(document).ready(function(){
 	function add_friend(){
 		var email = $('#dialog-friend #email-field input').val();
  		//TODO send email/notification to another person
-			$.getJSON( "http://antiboredom.herokuapp.com/activities.json", function( data ) {
+			$.getJSON( "/activities.json", function( data ) {
 			  var items = [];
 			  $.each( data, function( key, val ) {
 				items.push( "<li id='" + key + "'>" + val + "</li>" );
