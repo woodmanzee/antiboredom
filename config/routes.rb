@@ -1,6 +1,6 @@
 Antiboredom::Application.routes.draw do
   devise_for :users
-
+  resources :user
   resources :invites
   resources :activities
   resources :friends
@@ -8,10 +8,6 @@ Antiboredom::Application.routes.draw do
   get "pages/home"
   get "pages/newsfeed"
   get "pages/signup"
+  root :to => "pages#home"
 
-  root :to => "sign_in#new"
-
-  devise_scope :user do
-    get "sign_in", :to => "devise/sessions#new"
-  end
 end

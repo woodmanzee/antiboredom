@@ -1,19 +1,23 @@
 development:
-  host: localhost
   adapter: postgresql
   database: antiboredom_development
   pool: 5
   timeout: 5000
-
+  username: postgres
+  password: 98buckle
 test:
-  host: localhost
   adapter: postgresql
   database: antiboredom_test
   pool: 5
   timeout: 5000
+  username: postgres
+  password: 98buckle
 
 production:
   adapter: postgresql
   database: antiboredom_production
   pool: 5
   timeout: 5000
+  username: postgres
+  password: 98buckle
+
