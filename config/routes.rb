@@ -4,9 +4,10 @@ Antiboredom::Application.routes.draw do
   resources :invites
   resources :activities
   resources :friends
-  resources :pages
 
   get "pages/home"
+  get "pages/newsfeed"
+  get "pages/signup"
 
   root :to => "pages#home"
 end

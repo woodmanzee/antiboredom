@@ -1,0 +1,274 @@
+body {
+	background-color:white;
+	font-family:Verdana;
+}
+
+#header{
+    z-index:1;
+    border-radius:5px;
+    width:100%;
+    height:auto;
+    margin-top:-10px;
+    color:blue;
+}
+
+hr{
+	margin:40px;
+	width=100%
+}
+
+.signup{
+	/*
+	text-align:center;
+	position:relative;
+	width:75px;
+	height:25px;
+	border:1px solid #97BDA0;
+	float:right;
+	color:black;
+	margin-bottom:5px;
+	margin-left:auto;
+	margin-right:15px;
+	border-radius:4px;
+	font-size:15px;
+	padding-top:5px;
+	background-color:#BBEDC7;
+	box-shadow: 2px 2px 3px #888888;
+	*/
+}
+
+#signButton{
+	float:right;
+	width: 100px;
+	background-color: #BBEDC7;
+	margin-top:-30px;
+	margin-bottom:20px;
+	font-size:15px;
+}
+
+#logButton{
+	margin: 0 auto;
+	width: 75px;
+	label: "Log in";
+	background-color:#91D1ED;
+	text-align: center;
+}
+
+#login{
+	margin-top:100px;
+	width:300px;
+	height:155px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#F3F5F0;
+	border-radius:5px;
+	clear:both;
+	border:3px solid #C2C4BE;
+
+}
+
+img{
+	height:30px;
+	width:30px;
+	margin-left:2px;
+	margin-bottom:-2px;
+	border:1px solid black;
+	margin-top:-15px;
+}
+
+h1{
+	color:black;
+	font-size:30px;
+	margin-bottom:-30px;
+}
+
+#welcome{
+	text-align:right;
+	float:right;
+	font-size:13px;
+	margin-right:8px;
+	margin-bottom:-8px;
+	margin-top:20px;
+	color:black;
+}
+
+.formp{
+	background-color:#F3F5F0;
+	margin-left:10px;
+	font-size:15px;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+
+.form{
+	background-color:#F3F5F0;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:8px;
+
+}
+
+a{
+	text-decoration:none;
+	text-size:15px;
+	text-align:center;
+	color:black;
+}
+
+#createAccount{
+	width:150px;
+	height:50px;
+	clear:both;
+	border:2px solid #83BDD6;
+	margin:auto;
+	margin-bottom:10px;
+	border-radius:5px;
+	background-color:#91D1ED;
+	text-align:center;
+	box-shadow: 2px 2px 3px #888888;
+}
+
+#boredInfo{
+	clear:both;
+	margin-right:auto;
+	margin-left:auto;
+	border:2px solid black;
+	width:300px;
+	border-radius:5px;
+	font-size:14px;
+	
+}
+
+ul{
+	font-size:13px;
+	margin-left:-5px;
+}
+
+#signup{
+	margin-top:10px;
+	width:300px;
+	clear:both;
+	margin-right:auto;
+	margin-left:auto;
+	background-color:#F3F5F0;
+	border-radius:5px;
+	border:3px solid #C2C4BE;
+	height:auto;
+	margin-bottom:10px;
+}
+
+#whos_bored{
+	text-align:center;
+	margin-top:20px;
+}
+
+#boredFeedBox{
+	float:right;	
+	text-align:center;
+	border:1px solid black;
+	width:100%;
+}
+
+.newsItem{
+	margin-left:5px;
+	margin-top:20px;
+	padding:0px;
+	font-size:15px;
+	text-align:left;
+}
+
+h2{
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	font-size:20px;
+}
+
+#feedButtonBox{
+	float:left;
+	width:100%;
+	margin: 0 0 20px;
+}
+
+#boredButton{
+	float:left;
+	background-color:#F73434;
+	border-radius:4px;
+	width:95px;
+	height:40px;
+	box-shadow: 3px 3px 4px #888888;
+	font-align:center;
+	font-size:13px;
+	margin-top:10px;
+}
+
+#addFriendButton{
+	float:left;
+	margin-top:10px;
+	background-color:#F5F190;
+	border-radius:4px;
+	width:95px;
+	height: 40px;
+	font-size:13px;
+	box-shadow: 3px 3px 4px #888888;
+	font-align:center;
+}
+
+#notificationsButton{
+	float:left;
+	margin-top:10px;
+	background-color:#91D1ED;
+	border-radius:4px;
+	width:95px;
+	height: 40px;
+	font-size:13px;
+	box-shadow: 3px 3px 4px #888888;
+	font-align:center;
+}
+
+#dialog-activity{
+	font-size:15px;
+}
+
+.activity-form{
+	height:50px;
+	color:blue;
+}
+
+.accept_item{
+	margin-top:20px;
+	margin:auto;
+	font-size:15px;
+}
+
+.confirm_item{
+	margin-top:20px;
+	maring:auto;
+	font-size:15px;
+}
+
+#dialog-friend{
+	font-size:15px;
+}
+
+.friend_item{
+	margin-top:15px;
+}
+
+.friend_name{
+	font-weight:bold;
+}
+
+.ui-state-default .ui-icon {
+background-image: url(images/ui-icons_222222_256x240.png) !important; 
+}
+
+span.field_label {
+display: block;
+margin-top: 10px;
+}
+
+textarea {
+    resize: none;
+}
+

@@ -1,18 +1,76 @@
-<div id="header">
-	<h1>Bored Friends</h1>
-	<hr>
-	<a href="/pages/signup.html"><div id ="signButton" class="ui-button">
-	</div></a>
-</div>
-<div id="login">
-	<p class="formp">Email address:</p>
-	<form name=email class="form" value="">
-		<input type="text" name=email size=43%>
-	</form>
-	<p class="formp">Password:</p>
-	<form name=password class="form" value="">
-		<input type="password" name=password size=43%>
-	</form>
-	<a href="/pages/newsfeed.html"><div id="logButton" class ="ui-button">Login
-	</div></a>
-</div>
+		<div id="header">
+			<h1>Bored Friends</h1>
+			<p id="welcome">Welcome, <b>Beaker</b>!
+        <a href=""><%= image_tag("icons/Beaker.jpg", :alt => "piggy", :class => "friend_icon") %></a>
+			</p>
+			<hr>
+			<a href="signup.html"><div id ="signButton" class="ui-button">
+			</div></a>
+		</div>
+		<h2 id="whos_bored">Who's Bored?</h2>
+		<div id="feedButtonBox">
+			<a><div id="boredButton" class="ui-button"></div></a>
+			<a><div id="addFriendButton" class="ui-button"></div></a>
+			<div id="notificationsButton" class="ui-button"></div>
+		</div>
+		<div id="boredFeedBox">
+			<p class="newsItem">
+        <a href=""><%= image_tag("icons/Kermit.jpg", :alt => "piggy", :class => "friend_icon") %></a>
+				<b>Kermit</b> wants to play the banjo
+			</p>
+			<p class="newsItem">
+        <a href=""><%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %></a>
+				<b>Piggy</b> wants to talk about herself
+			</p>
+			<!-- news_item_placeholder is used as a template to copy
+				new items into -->
+			<div id="news_item_placeholder" class="newsItem" style="display: none;">
+        <%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "news_user_icon") %>
+				<span class="news_user_name"><b>User</b></span> wants to 
+				<span class="news_activity_name">insert activity here</span>
+			</div>
+		</div>
+		<div id="dialog-activity">
+			<form name=activity class="activity-form" value=" ">
+				<div id="what_field" class="activity_dialog_field">
+					<span class="field_label">What:</span><input type="text" name=activity size=25%>
+				</div>
+				<div id="where_field" class="activity_dialog_field">
+					<span class="field_label">Where:</span><input type="text" name=activity size=25%>
+				</div>
+				<div id="start_field" class="activity_dialog_field">
+					<span class="field_label">Start:</span><input type="text" name=activity size=25%>
+				</div>
+				<div id="end_field" class="activity_dialog_field">
+					<span class="field_label">End:</span><input type="text" name=activity size=25%>
+				</div>
+				<div id="details_field" class="activity_dialog_field">
+					<span class="field_label">Details:</span><textarea rows="10" cols="30" name=activity></textarea>
+				</div>
+			</form>
+		</div>
+		<div id="dialog-friend">
+			Enter your friend's email address:
+			<form name=friend id="email-field" value=" ">
+				<input type="text" name=friend size=25%>
+			</form>
+			<p>Your friends:</p>
+			<div id ="friends_list">
+				<div id ="friends_placeholder" class="friend_item" style="display: none;">
+          <%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
+					<span class="friend_name"><b>Friend Name</b></span>
+				</div>
+			</div>
+		</div>
+		<div id="dialog-notifications">
+			<div id ="notifications_list">
+				<div id ="accept_placeholder" class = "accept_item" style="display: none;">
+          <%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
+					<span class="friend_name"><b>Friend Name</b></span> accepted your friend request.
+				</div>
+				<div id ="confirm_placeholder" class ="confirm_item" style="display:none;">
+          <%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
+					<span class="friend_name"><b>Friend Name</b></span> added you as a friend.
+				</div>
+			</div>
+		</div>

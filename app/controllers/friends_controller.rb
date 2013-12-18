@@ -24,15 +24,30 @@ class FriendsController < ApplicationController
   # POST /friends
   # POST /friends.json
   def create
-    @friend = Friend.new(friend_params)
+    @lower = 0
+    @higher = 1
+    if friend_params[:userid] > friend_params[:friendid]
+      @higher = friend_params[:userid]
+      @lower = friend_params[:friendid]
+    else
+      @lower = friend_params[:friendid]
+      @higher = friend_params[:userid]
+    end
 
-    respond_to do |format|
-      if @friend.save
-        format.html { redirect_to @friend, notice: 'Friend was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @friend }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
+    @existing = Friend.select("userid, friendid").where("userid = ? AND friendid = ?", @lower, @higher)
+    if @existing.nil? || @existing.empty?
+      format.json { render json: @lower, status: :unprocessable_entity }
+    else
+      @friend = Friend.new(:userid => @lower, :friendid => @higher)
+
+      respond_to do |format|
+        if @friend.save
+          format.html { redirect_to @friend, notice: 'Friend was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @friend }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @friend.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

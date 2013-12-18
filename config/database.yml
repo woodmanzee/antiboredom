@@ -1,9 +1,12 @@
 development:
+  host: localhost
   adapter: postgresql
   database: antiboredom_development
   pool: 5
   timeout: 5000
+
 test:
+  host: localhost
   adapter: postgresql
   database: antiboredom_test
   pool: 5
