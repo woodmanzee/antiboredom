@@ -25,6 +25,10 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(activity_params)
+
+    #inspection
+    puts @activity
+
     if user_signed_in?
       @activity.userid = current_user
     end
