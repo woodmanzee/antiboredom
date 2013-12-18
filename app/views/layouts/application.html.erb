@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Antiboredom</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+
+	<head>
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/jquery-ui-smoothness-1.10.3.css"/>
+		<title>Welcome to Bored Friends!</title>
+		<script type="text/javascript" src="../scripts/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../scripts/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="../scripts/index.js"></script>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
 </head>
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
-<h1>Backend Page for CS 360 Antiboredom Project</h1>
 
 <%= yield %>
 
