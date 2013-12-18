@@ -1,4 +1,5 @@
 Antiboredom::Application.routes.draw do
+  resources :user
   resources :invites
   resources :activities
   resources :friends
@@ -20,5 +21,4 @@ Antiboredom::Application.routes.draw do
 
   root :to => "devise/sessions#new"
   end
-
 end

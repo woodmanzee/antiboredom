@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Friendid</th>
+      <th>Block</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Userid:</strong>
-  <%= @friend.userid %>
-</p>
-
-<p>
-  <strong>Friendid:</strong>
-  <%= @friend.friendid %>
-</p>
-
-<p>
-  <strong>Block:</strong>
-  <%= @friend.block %>
-</p>
-
-<%= link_to 'Edit', edit_friend_path(@friend) %> |
-<%= link_to 'Back', friends_path %>
+  <tbody>
+    <% @friends.each do |friend| %>
+      <tr>
+        <td><%= friend.userid %></td>
+        <td><%= friend.friendid %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
