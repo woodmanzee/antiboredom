@@ -11,5 +11,6 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require_tree ./development-bundle/ui
 //= require_tree

@@ -10,6 +10,10 @@ Antiboredom::Application.routes.draw do
   get "pages/newsfeed"
   get "pages/signup"
 
+  post "activities/create"
+  post "activities/new"
+  delete "devise/sessions"
+
   authenticated :user do
     root :to => "pages#newsfeed", as: :authenticated_root
   end
