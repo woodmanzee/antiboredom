@@ -4,12 +4,6 @@ $(document).ready(function(){
   get_activities();
   welcome();
 
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-    }
-  });
-
   $("#logoutButton").button({
     label: "Log Out"
   });
@@ -23,8 +17,8 @@ $(document).ready(function(){
         console.log("Logged out");
         location.href = "http://localhost:3000"
       }
-    })
-  }
+    });
+  });
 
   $("#addFriendButton").button({
     label: "Add Friend"
@@ -33,9 +27,11 @@ $(document).ready(function(){
   $("#boredButton").button({
     label: "I'm Bored!"
   });
+
   $("#notificationsButton").button({
     label: "Notifications"
   });
+
   $("#addFriendButton").click( function() {
     $("#dialog-friend").dialog( "open" );
   });
@@ -79,7 +75,7 @@ $(document).ready(function(){
       error: function(msg) {
         alert("Something went wrong: " + msg.statusText);
       }
-    })
+    });
   }
 
   function welcome(){
