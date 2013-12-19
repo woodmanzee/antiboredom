@@ -106,12 +106,15 @@ a:hover {
     background-color: transparent !important;
     color: #FFFFFF;
 }
-
+#welcome_placeholder{
+	float:right;
+	position:relative;
+}
 #welcome{
 	color: #000000;
     font-size: 13px;
-    left: 78%;
-    position: relative;
+    text-alight:right;
+    position:relative;
 }
 
 .formp{
