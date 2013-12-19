@@ -1,17 +1,17 @@
 $(document).ready(function(){
 
   get_friends();	
-  get_notifications();
   get_activities();
+  welcome();
 
   $.ajaxSetup({
-  headers: {
-    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-  }
-});
+    headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
 
   $("#logoutButton").button({
-    label: "Log out"
+    label: "Log Out"
   });
 
   $("#logoutButton").click(function(){
@@ -23,15 +23,15 @@ $(document).ready(function(){
         console.log("Logged out");
         location.href = "http://localhost:3000"
       }
-    });
-  });
+    })
+  }
 
   $("#addFriendButton").button({
-    label: "Add friend"
+    label: "Add Friend"
   });
 
   $("#boredButton").button({
-    label: "I'm bored!"
+    label: "I'm Bored!"
   });
   $("#notificationsButton").button({
     label: "Notifications"
@@ -47,32 +47,6 @@ $(document).ready(function(){
   $( "#notificationsButton" ).click(function() {
     $( "#dialog-notifications" ).dialog( "open" );
   });
-
-  function get_activities() {
-    $.ajax({
-      type:"GET",
-      url:"http://localhost:3000/activities.json",
-      success: function(data) {
-        $.each( data, function(i) {
-          console.log(data[i].location);
-          display_activity(data[i].title);
-        });
-      }
-    });
-  }
-
-  function display_activity(what){
-    // create a newsfeed item with the values
-    var newsItem = $('#news_item_placeholder').clone();
-    // TODO: populate the new values with the json returned from
-    // the server after a successful add
-    newsItem.attr('id', 'newID');
-    newsItem.find('img.news_user_icon').attr('id', 'newID');
-    newsItem.find('span.news_user_name').text('Someone');
-    newsItem.find('span.news_activity_name').text(what);
-    $('#boredFeedBox').prepend(newsItem);
-    newsItem.show();
-  }
 
   function create_activity() {
     // get the values from the form
@@ -106,77 +80,96 @@ $(document).ready(function(){
         alert("Something went wrong: " + msg.statusText);
       }
     })
+  }
 
+  function welcome(){
+    var url = "http://localhost:3000/user/cur.json";
+    $.getJSON(url, function(data){
+      name = data.email;
+      var welcome2 = $('#welcome_placeholder').clone();
+      welcome2.find('span.cur_user_name').text(name);
+      $('#welcome').replaceWith(welcome2.html());
+    });
+  }
+
+  function get_activities() {
+    $.ajax({
+      type:"GET",
+      url:"http://localhost:3000/activities.json",
+      success: function(data) {
+        $.each( data, function(i) {
+          var id = data[i].userid;
+          if (id <= 0){
+            id = 1;
+          }
+          var url = "http://localhost:3000/user/" + id +".json";
+          $.getJSON(url, function(data2){
+            name = data2.email;
+            display_activity(data[i].title,name);
+          });
+        });
+      }
+    });
+  }
+
+  function display_activity(what, who){
+    // create a newsfeed item with the values
+    var newsItem = $('#news_item_placeholder').clone();
+    // TODO: populate the new values with the json returned from
+    // the server after a successful add
+    newsItem.attr('id', 'newID');
+    newsItem.find('img.news_user_icon').attr('id', 'newID');
+    newsItem.find('span.news_user_name').text(who);
+    newsItem.find('span.news_activity_name').text(what);
+    $('#boredFeedBox').prepend(newsItem);
+    newsItem.show();
   }
 
   function add_friend(){
     var email = $('#dialog-friend #email-field input').val();
     //TODO send email/notification to another person
-    $.getJSON( "http://antiboredom.herokuapp.com/activities.json", function( data ) {
-      var items = [];
-      $.each( data, function( key, val ) {
-        items.push( "<li id='" + key + "'>" + val + "</li>" );
-      });
-
-      $( "<ul/>", {
-        "class": "my-new-list",
-        html: items.join( "" )
-      }).appendTo( "body" );
+    $.ajax({
+      type:"POST",
+      url:"http://localhost:3000/friends/new",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      processData: false, // we don't want jquery to urlencode the json we send
+      data: JSON.stringify({ userid: "1", title: what, location: where, start: start_time, end: end_time }),
+      success: function(data, status, obj) {
+        alert( "Returned with: " + data + " and " + status + " and " + obj);
+      },
+      error: function() {
+        alert("This address is not registered with us.");
+      }
     });
 
-    /*$.ajax({
-dataType: "jsonp",
-url: "http://antiboredom.herokuapp.com/activities.json",
-success: function( data ) {
-var items = [];
-$.each( data, function( key, val ) {
-items.push( "<li id='" + key + "'>" + val + "</li>" );
-});
-
-$( "<ul/>", {
-"class": "my-new-list",
-html: items.join( "" )
-}).appendTo( "body" );
-},
-error: function() {
-alert("Something went wrong");
-} 
-});*/
-}
-
-    function get_friends(){	
-      var friends = [ "Piggy","Kermit","Someone"];
-      for ( var i = 0; i < friends.length; i = i + 1 ) {
-        var friend = $('#friends_placeholder').clone();
-        friend.attr('id', 'newID');
-        friend.find('img.friend_icon').attr('id','newID');
-        friend.find('span.friend_name').text(friends[i]);
-        $('#friends_list').append(friend);
-        friend.show();
-      }
   }
 
-  function get_notifications(){
-    var accepted = ["Piggy"];
-    for(var i = 0; i < accepted.length; i = i + 1 ){
-      var accept = $('#accept_placeholder').clone();
-      accept.attr('id','newID');
-      accept.find('img.friend_icon').attr('id','newID');
-      accept.find('span.friend_name').text(accepted[i]);
-      $('#notifications_list').append(accept);
-      accept.show();
-    }
+  function get_friends(){	
+    $.ajax({
+      type:"GET",
+      url:"http://localhost:3000/friends.json",
+      success: function(data) {
+        $.each( data, function(i) {
+          var id = data[i].userid;
+          var url = "http://localhost:3000/user/" + id +".json";
+          $.getJSON(url, function(data2){
+            name = data2.email;
+            display_friend(name);
+          });
 
-    var confirmed = ["Kermit"];
-    for(var i = 0; i < confirmed.length; i = i + 1 ){
-      var confirm = $('#confirm_placeholder').clone();
-      confirm.attr('id','newID');
-      confirm.find('img.friend_icon').attr('id','newID');
-      confirm.find('span.friend_name').text(confirmed[i]);
-      $('#notifications_list').append(confirm);
-      confirm.show();
-    }
+        });
+      }
+    });
+  }
 
+  function display_friend(name){
+    var friend = $('#friends_placeholder').clone();
+    friend.attr('id', 'newID');
+    friend.find('img.friend_icon').attr('id','newID');
+    friend.find('span.friend_name').text(name);
+    $('#friends_list').prepend(friend);
+    friend.show();
   }
 
   /* Note: At present, using .val() on textarea elements strips carriage return 
@@ -184,13 +177,13 @@ alert("Something went wrong");
      server via XHR however, carriage returns are preserved (or added by browsers 
      which do not include them in the raw value). A workaround for this issue can 
      be achieved using a valHook as follows:
-http://api.jquery.com/val/
-*/
-$.valHooks.textarea = {
-get: function( elem ) {
-       return elem.value.replace( /\r?\n/g, "\r\n" );
-     }
-};
+     http://api.jquery.com/val/
+  */
+  $.valHooks.textarea = {
+    get: function( elem ) {
+      return elem.value.replace( /\r?\n/g, "\r\n" );
+    }
+  };
 
   $( "#dialog-activity" ).dialog({
     autoOpen: false,
@@ -231,22 +224,5 @@ get: function( elem ) {
       $('#email-field').val("");
       console.log($('#email-field').val());
     }
-  });    
-
-
-  $( "#dialog-notifications" ).dialog({
-    autoOpen: false,
-    resizable: false,
-    title: "Notifications",
-    width: 300,
-    height: 300,
-    modal: true,
-    buttons: {
-      "Ok": function() {
-        $( this ).dialog( "close" );
-      }
-    }
   });
-
-
 });

@@ -1,8 +1,4 @@
 $(document).ready(function(){	
-	$( "#logButton" ).button({
-    });
 
-	$("#signButton").button({
-		label: "Sign up"
-	});
+	$("input[type=submit]").attr("id","logButton");
 });

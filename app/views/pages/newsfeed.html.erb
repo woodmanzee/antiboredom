@@ -2,34 +2,30 @@
 <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect}" if protect_against_forgery? %>
   <div id="header">
 			<h1>Bored Friends</h1>
-			<p id="welcome">Welcome, <b>Beaker</b>!
-        <a href=""><%= image_tag("icons/Beaker.jpg", :alt => "piggy", :class => "friend_icon") %></a>
-			</p>
-			<hr>
-			<a><div id ="logoutButton" class="ui-button">
-      <%= link_to "Sign Out", destroy_user_session_path %>
+			<div id="welcome_placeholder" "welcome">
+				<span id="welcome">Welcome, <b><span class="cur_user_name">Current User</span></b>!
+				<%= image_tag("icons/Beaker.jpg", :alt => "piggy", :class => "friend_icon") %>
+				</span>
+			</div>
+			<a><div id ="logoutButton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+			<%= link_to "Sign Out", destroy_user_session_path %>
 			</div></a>
+			<hr>
 		</div>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
 		<h2 id="whos_bored">Who's Bored?</h2>
 		<div id="feedButtonBox">
 			<a><div id="boredButton" class="ui-button"></div></a>
 			<a><div id="addFriendButton" class="ui-button"></div></a>
-			<div id="notificationsButton" class="ui-button"></div>
+			<!-- <div id="notificationsButton" class="ui-button"></div> -->
 		</div>
 		<div id="boredFeedBox">
-			<p class="newsItem">
-        <a href=""><%= image_tag("icons/Kermit.jpg", :alt => "piggy", :class => "friend_icon") %></a>
-				<b>Kermit</b> wants to play the banjo
-			</p>
-			<p class="newsItem">
-        <a href=""><%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %></a>
-				<b>Piggy</b> wants to talk about herself
-			</p>
 			<!-- news_item_placeholder is used as a template to copy
 				new items into -->
 			<div id="news_item_placeholder" class="newsItem" style="display: none;">
         <%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "news_user_icon") %>
-				<span class="news_user_name"><b>User</b></span> wants to 
+				<b><span class="news_user_name">User</span></b> wants to 
 				<span class="news_activity_name">insert activity here</span>
 			</div>
 		</div>
@@ -65,15 +61,17 @@
 				</div>
 			</div>
 		</div>
+		<!--
 		<div id="dialog-notifications">
 			<div id ="notifications_list">
-				<div id ="accept_placeholder" class = "accept_item" style="display: none;">
-          <%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
-					<span class="friend_name"><b>Friend Name</b></span> accepted your friend request.
+				<div id ="accept_placeholder" class = "accept_item" style="display: none;"> -->
+          <%# image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
+				<!--	<span class="friend_name"><b>Friend Name</b></span> accepted your friend request.
 				</div>
-				<div id ="confirm_placeholder" class ="confirm_item" style="display:none;">
-          <%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
-					<span class="friend_name"><b>Friend Name</b></span> added you as a friend.
+				<div id ="confirm_placeholder" class ="confirm_item" style="display:none;"> -->
+          <%# image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
+				<!--	<span class="friend_name"><b>Friend Name</b></span> added you as a friend.
 				</div>
 			</div>
 		</div>
+		-->
