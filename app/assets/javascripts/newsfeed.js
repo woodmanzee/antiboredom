@@ -85,7 +85,7 @@ $(document).ready(function(){
 	  
 	  $.ajax({
 			type: "POST",
-			url: "http://antiboredom.herokuapp.com/activities/new",
+			url: "http://antiboredom.herokuapp.com/activities/create",
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
 			processData: false, // we don't want jquery to urlencode the json we send

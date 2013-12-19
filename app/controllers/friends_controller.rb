@@ -10,8 +10,8 @@ class FriendsController < ApplicationController
   # GET /friends/1
   # GET /friends/1.json
   def show
-	@user_id = params[:id].to_s
-	@friends = Friend.select("id, userid, friendid").where("userid = ?", @user_id)
+	  @user_id = params[:id].to_s
+	  @friends = Friend.select("id, userid, friendid").where("userid = ?", @user_id)
   end
 
   # GET /friends/new
