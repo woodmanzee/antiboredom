@@ -4,10 +4,6 @@ $(document).ready(function(){
 	get_notifications();
 	get_activities();
 	
-	$("#logoutButton").button({
-		label: "Log out"
-	});
-	
 	$("#logoutButton").click(function(){
 		$.ajax({
 			type:"DELETE",

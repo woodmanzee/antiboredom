@@ -1,18 +1,20 @@
 		<div id="header">
 			<h1>Bored Friends</h1>
-			<p id="welcome">Welcome, <b>Beaker</b>!
-        <a href=""><%= image_tag("icons/Beaker.jpg", :alt => "piggy", :class => "friend_icon") %></a>
-			</p>
-			<hr>
-			<a><div id ="logoutButton" class="ui-button">
-      <%= link_to "Sign Out", destroy_user_session_path %>
+			<span id="welcome">Welcome, <b>Beaker</b>!
+			<%= image_tag("icons/Beaker.jpg", :alt => "piggy", :class => "friend_icon") %>
+			</span>
+			<a><div id ="logoutButton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+			<%= link_to "Sign Out", destroy_user_session_path %>
 			</div></a>
+			<hr>
 		</div>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
 		<h2 id="whos_bored">Who's Bored?</h2>
 		<div id="feedButtonBox">
 			<a><div id="boredButton" class="ui-button"></div></a>
 			<a><div id="addFriendButton" class="ui-button"></div></a>
-			<div id="notificationsButton" class="ui-button"></div>
+			<!-- <div id="notificationsButton" class="ui-button"></div> -->
 		</div>
 		<div id="boredFeedBox">
 			<p class="newsItem">
@@ -63,15 +65,17 @@
 				</div>
 			</div>
 		</div>
+		<!--
 		<div id="dialog-notifications">
 			<div id ="notifications_list">
-				<div id ="accept_placeholder" class = "accept_item" style="display: none;">
-          <%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
-					<span class="friend_name"><b>Friend Name</b></span> accepted your friend request.
+				<div id ="accept_placeholder" class = "accept_item" style="display: none;"> -->
+          <%# image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
+				<!--	<span class="friend_name"><b>Friend Name</b></span> accepted your friend request.
 				</div>
-				<div id ="confirm_placeholder" class ="confirm_item" style="display:none;">
-          <%= image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
-					<span class="friend_name"><b>Friend Name</b></span> added you as a friend.
+				<div id ="confirm_placeholder" class ="confirm_item" style="display:none;"> -->
+          <%# image_tag("icons/Piggy.jpg", :alt => "piggy", :class => "friend_icon") %>
+				<!--	<span class="friend_name"><b>Friend Name</b></span> added you as a friend.
 				</div>
 			</div>
 		</div>
+		-->
