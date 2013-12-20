@@ -72,10 +72,10 @@ $(document).ready(function(){
       processData: false, // we don't want jquery to urlencode the json we send
       data: JSON.stringify({ userid: "1", title: what, location: where, start: start_time, end: end_time }),
       success: function(data, status, obj, response) {
-        alert( "Returned with: " + data + " and " + status + " and " + obj);
+        //alert( "Returned with: " + data + " and " + status + " and " + obj);
       },
       error: function(msg) {
-        alert("Something went wrong: " + msg.statusText);
+        //alert("Something went wrong: " + msg.statusText);
       }
     });
   }
@@ -142,10 +142,10 @@ $(document).ready(function(){
         processData: false, // we don't want jquery to urlencode the json we send
         data: JSON.stringify({ userid: userid, email: email }),
         success: function(data, status, obj) {
-          alert( "Returned with: " + data + " and " + status);
+          //alert( "Returned with: " + data + " and " + status);
         },
         error: function() {
-          alert("This address is not registered with us.");
+          //alert("This address is not registered with us.");
         }
       });
     });
