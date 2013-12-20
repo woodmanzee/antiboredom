@@ -11,11 +11,13 @@ $(document).ready(function(){
   $("#logoutButton").click(function(){
     $.ajax({
       type:"DELETE",
-      url:"http://localhost:3000/users/sign_out",
+      //url:"http://localhost:3000/users/sign_out",
+      url:"http://antiboredom.herokuapp.com/users/sign_out",
       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
       success: function(data) {
         console.log("Logged out");
-        location.href = "http://localhost:3000"
+        //location.href = "http://localhost:3000"
+        location.href = "http://antiboredom.herokuapp.com"
       }
     });
   });
@@ -63,8 +65,8 @@ $(document).ready(function(){
 
     $.ajax({
       type: "POST",
-      //url: "http://antiboredom.herokuapp.com/activities/create",
-      url: "http://localhost:3000/activities/create",
+      url: "http://antiboredom.herokuapp.com/activities/create",
+      //url: "http://localhost:3000/activities/create",
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       processData: false, // we don't want jquery to urlencode the json we send
@@ -79,7 +81,8 @@ $(document).ready(function(){
   }
 
   function welcome(){
-    var url = "http://localhost:3000/user/cur.json";
+    var url = "http://antiboredom.herokuapp.com/user/cur.json";
+    //var url = "http://localhost:3000/user/cur.json";
     $.getJSON(url, function(data){
       name = data.username;
       var welcome2 = $('#welcome_placeholder').clone();
@@ -91,14 +94,16 @@ $(document).ready(function(){
   function get_activities() {
     $.ajax({
       type:"GET",
-      url:"http://localhost:3000/activities.json",
+      url:"http://antiboredom.herokuapp.com/activities.json",
+      //url:"http://localhost:3000/activities.json",
       success: function(data) {
         $.each( data, function(i) {
           var id = data[i].userid;
           if (id <= 0){
             id = 1;
           }
-          var url = "http://localhost:3000/user/" + id +".json";
+          var url = "http://antiboredom.herokuapp.com/user/" + id +".json";
+          //var url = "http://localhost:3000/user/" + id +".json";
           $.getJSON(url, function(data2){
             name = data2.username;
             display_activity(data[i].title,name);
@@ -123,13 +128,14 @@ $(document).ready(function(){
 
   function add_friend(){
     var email = $('#dialog-friend #email-field input').val();
-    var url = "http://localhost:3000/user/cur.json";
+    var url = "http://antiboredom.herokuapp.com/user/cur.json";
+    //var url = "http://localhost:3000/user/cur.json";
     $.getJSON(url, function(data){
       var userid = data.id;
       $.ajax({
         type:"POST",
-        //url: "http://antiboredom.herokuapp.com/friends/create",
-        url:"http://localhost:3000/friends/create",
+        url: "http://antiboredom.herokuapp.com/friends/create",
+        //url:"http://localhost:3000/friends/create",
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -149,11 +155,13 @@ $(document).ready(function(){
   function get_friends(){	
     $.ajax({
       type:"GET",
-      url:"http://localhost:3000/friends.json",
+      url:"http://antiboredom.herokuapp.com/friends.json",
+      //url:"http://localhost:3000/friends.json",
       success: function(data) {
         $.each( data, function(i) {
           var id = data[i].userid;
-          var url = "http://localhost:3000/user/" + id +".json";
+          var url = "http://antiboredom.herokuapp.com/user/" + id +".json";
+          //var url = "http://localhost:3000/user/" + id +".json";
           $.getJSON(url, function(data2){
             name = data2.username;
             display_friend(name);
