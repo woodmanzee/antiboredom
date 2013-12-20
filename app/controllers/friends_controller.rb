@@ -26,32 +26,36 @@ class FriendsController < ApplicationController
   # POST /friends
   # POST /friends.json
   def create
-    @lower = 0
-    @higher = 1
-    if friend_params[:userid] > friend_params[:friendid]
-      @higher = friend_params[:userid]
-      @lower = friend_params[:friendid]
-    else
-      @lower = friend_params[:friendid]
-      @higher = friend_params[:userid]
-    end
+    @userid = User.select("id").where("id = ?", params[:userid])
 
-    @existing = Friend.select("userid, friendid").where("userid = ? AND friendid = ?", @lower, @higher)
-    if @existing.nil? || @existing.empty?
-      @friend = Friend.new(:userid => @lower, :friendid => @higher)
-
+    # make sure that user exists
+    puts "INCOMING EMAIL: #{friend_params[:email]}, INCOMING ID: #{@userid}, OTHER: #{params[:email]}"
+    @friendid = User.select("id").where("email = ?", params[:email])
+    puts "FRIEND OBJ: #{@friendid}"
+    if @friendid.nil? || @friendid.empty?
       respond_to do |format|
-        if @friend.save
-          format.html { redirect_to @friend, notice: 'Friend was successfully created.' }
-          format.json { render action: 'show', status: :created, location: @friend }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @friend.errors, status: :unprocessable_entity }
-        end
+        format.json { render json: "A user with that email does not exist", status: :unprocessable_entity }
       end
     else
-      respond_to do |format|
-        format.json { render json: @lower, status: :unprocessable_entity }
+
+      @check1 = Friend.select("userid, friendid").where("userid = ? AND friendid = ?", @userid.first.id, @friendid.first.id)
+      @check2 = Friend.select("userid, friendid").where("userid = ? AND friendid = ?", @friendid.first.id, @userid.first.id)
+      if (@check2.nil? || @check1.empty?) && (@check2.nil? || @check2.empty?)
+        @friend = Friend.new(:userid => @userid.first.id, :friendid => @friendid.first.id)
+
+        respond_to do |format|
+          if @friend.save
+            format.html { redirect_to @friend, notice: 'Friend was successfully created.' }
+            format.json { render action: 'show', status: :created, location: @friend }
+          else
+            format.html { render action: 'new' }
+            format.json { render json: @friend.errors, status: :unprocessable_entity }
+          end
+        end
+      else
+        respond_to do |format|
+          format.json { render json: @lower, status: :unprocessable_entity }
+        end
       end
     end
   end

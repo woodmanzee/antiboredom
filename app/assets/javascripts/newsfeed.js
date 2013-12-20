@@ -123,20 +123,25 @@ $(document).ready(function(){
 
   function add_friend(){
     var email = $('#dialog-friend #email-field input').val();
-    //TODO send email/notification to another person
-    $.ajax({
-      type:"POST",
-      url:"http://localhost:3000/friends/new",
-      contentType: "application/json; charset=utf-8",
-      dataType: "json",
-      processData: false, // we don't want jquery to urlencode the json we send
-      data: JSON.stringify({ userid: "1", title: what, location: where, start: start_time, end: end_time }),
-      success: function(data, status, obj) {
-        alert( "Returned with: " + data + " and " + status + " and " + obj);
-      },
-      error: function() {
-        alert("This address is not registered with us.");
-      }
+    var url = "http://localhost:3000/user/cur.json";
+    $.getJSON(url, function(data){
+      var userid = data.id;
+      $.ajax({
+        type:"POST",
+        //url: "http://antiboredom.herokuapp.com/friends/create",
+        url:"http://localhost:3000/friends/create",
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        processData: false, // we don't want jquery to urlencode the json we send
+        data: JSON.stringify({ userid: userid, email: email }),
+        success: function(data, status, obj) {
+          alert( "Returned with: " + data + " and " + status);
+        },
+        error: function() {
+          alert("This address is not registered with us.");
+        }
+      });
     });
 
   }

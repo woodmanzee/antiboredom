@@ -10,6 +10,8 @@ Antiboredom::Application.routes.draw do
   get "pages/newsfeed"
   get "pages/signup"
 
+  post "friends/create"
+  post "friends/new"
   post "activities/create"
   post "activities/new"
   delete "devise/sessions"
