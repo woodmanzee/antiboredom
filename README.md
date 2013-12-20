@@ -67,5 +67,4 @@ attributes of userID and friendID. The user also has a one to many relationship 
 includes the attributes start time, end time, time and date, userID, activityID, title, location, and for future 
 implementation the option to be private. Finally for future implementation Activity has a one to many relationship 
 with Invite which will have the attributes userID, attending, and activityID.
-
 ![Database Model](/app/assets/images/dbmodel.png?raw=true)
