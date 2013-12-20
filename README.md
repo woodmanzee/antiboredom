@@ -4,18 +4,14 @@ antiboredom
 BYU CS 360 Web Application Project
 ----------------------------------
 
-When looking for something to do in the moment, most people turn to texting all their friends (and then sitting around hoping someone answers) or calling them one by one. Current social media doesn't really help solve this problem, as hours can be spent on "social" media without ever actually talking to another persion. 
-
-This application helps people reach out through the internet to find their friends that are looking for things to do. A simple click of a button will allow them to see all their friends that are wanting to get together and chat in-app.
+A person who is bored can spend several hours on social media trying to contact a friend with whom they can do an activity with, but never actually accomplish this. The purpose of the Bored Friends application is for a user to quickly contact several of his or her friends who are also looking for something to do.  To sign up the user needs to provide an email address, password, and username. The user merely has to click one button to show he or she is bored and suggest something that might be fun to do. This is posted on a newsfeed for his or her friends to see and to reply. The user can add new friends to his or her list of friends and can see any posts from them on the newsfeed. When the user clicks the “I’m Bored” button, a table to create an activity will appear. The user will then fill out what he or she would like to do, where the user or activity is located, a starting time for the activity, and an expiration time for the activity. The user can also add any further details about the activity. The user then has the option to create the activity which will be posted on the newsfeed, or cancel out of it. From this point, the user can either search for other activities that are being posted on his or her newsfeed or wait for a friend to contact him or her about the newly created post.
 
 Contributions
 ------------
 
 
 ####Melissa Smith
-I worked on the backend. I attended the group meetings and helping develop the design. 
-I added the username field to sign up. I wrote up and submitted the third milestone report. 
-I was willing and  available as much as possible.
+I worked on the backend. I attended the group all the group meetings and helped develop the design. I added the username field to sign up for the application. I wrote up and submitted the third milestone report. I also wrote and posted the final report for the project.
 
 ####Zack Woodmansee
 Worked primarily with the backend, helped with some of the javascript requests
@@ -54,11 +50,7 @@ MVP Features
 
 Future Features
 ---------------
-<ul>
-<li>Post things you're doing for friends to see/News Feed</li>
-<li>Messaging Service</li>
-<li>Connect to Facebook to easily add friends/events</li>
-</ul>
+The application is in a basic stage. There are several other features we would like to add to the application. One of the features is that the user can create a private event and invite specific friends to that event. We would also like to add a messaging service to the application, so that the user and friends can connect even faster. Finally, another feature we would like to add is a connection to Facebook, so it will be even easier for the user to add friends and show events from the Bored Friends application.
 
 Languages/Hosting
 -----------------
