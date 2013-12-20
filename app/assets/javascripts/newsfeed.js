@@ -81,7 +81,7 @@ $(document).ready(function(){
   function welcome(){
     var url = "http://localhost:3000/user/cur.json";
     $.getJSON(url, function(data){
-      name = data.email;
+      name = data.username;
       var welcome2 = $('#welcome_placeholder').clone();
       welcome2.find('span.cur_user_name').text(name);
       $('#welcome').replaceWith(welcome2.html());
@@ -100,7 +100,7 @@ $(document).ready(function(){
           }
           var url = "http://localhost:3000/user/" + id +".json";
           $.getJSON(url, function(data2){
-            name = data2.email;
+            name = data2.username;
             display_activity(data[i].title,name);
           });
         });
@@ -150,7 +150,7 @@ $(document).ready(function(){
           var id = data[i].userid;
           var url = "http://localhost:3000/user/" + id +".json";
           $.getJSON(url, function(data2){
-            name = data2.email;
+            name = data2.username;
             display_friend(name);
           });
 
