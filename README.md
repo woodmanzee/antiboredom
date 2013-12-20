@@ -33,4 +33,4 @@ Mobile: No<br/>
 
 Database Model
 --------------
-![Database Model](dbmodel.png?raw=true)
+![Database Model](/app/assets/images/dbmodel.png?raw=true)
