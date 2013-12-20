@@ -61,4 +61,11 @@ Mobile: No<br/>
 
 Database Model
 --------------
+The Database Model is that a user will have attributes that include a userID, an email, a password, a bored flag,
+a profile picture, a name, and a location. It has a one to many relationship with the friend entity. Friend has the 
+attributes of userID and friendID. The user also has a one to many relationship with the activity entity. Activity 
+includes the attributes start time, end time, time and date, userID, activityID, title, location, and for future 
+implementation the option to be private. Finally for future implementation Activity has a one to many relationship 
+with Invite which will have the attributes userID, attending, and activityID.
+
 ![Database Model](/app/assets/images/dbmodel.png?raw=true)
